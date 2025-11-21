@@ -1,21 +1,22 @@
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flaskapi
+  name: flaskmonitor
   labels:
-    app: flaskapi
+    app: flaskmonitor
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: flaskapi
+      app: flaskmonitor
   template:
     metadata:
       labels:
-        app: flaskapi
+        app: flaskmonitor
     spec:
       containers:
-      - name: flaskapi
+      - name: flaskmonitor
         image: dvasanth26/flaskapp:latest
         ports:
         - containerPort: 5000
